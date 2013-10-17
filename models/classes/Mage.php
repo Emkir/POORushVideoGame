@@ -10,6 +10,7 @@
 
 			$this->health -= 150;
 			$this->intelligence += 60;
+            parent::__construct();
 		}
 
 		/* get type */

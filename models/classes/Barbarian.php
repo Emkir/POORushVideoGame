@@ -5,6 +5,7 @@ class Barbarian extends Character implements BarbarianInterface{
     public function __construct(){
         $this->strength += 100;
         $this->intelligence -= 70;
+        parent::__construct();
     }
 
     public function getType(){

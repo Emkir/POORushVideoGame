@@ -5,7 +5,7 @@ class Warrior extends Character implements WarriorInterface{
 
 	public function __construct(){
 		$this->strength += 30;
-		//parent::__construct();
+		parent::__construct();
 	}
 
 	public function getType(){

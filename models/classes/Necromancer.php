@@ -5,6 +5,7 @@ class Necromancer extends Character implements NecromancerInterface{
 
 	public function __construct(){
 		$this->health += 150;
+        parent::__construct();
 	}
 	
 	public function getType(){

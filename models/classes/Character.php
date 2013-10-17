@@ -1,11 +1,16 @@
 <?php
 
-abstract class Character implements CharacterInterface{
+abstract class Character extends Table implements CharacterInterface{
     protected $name;
     protected $inventory = array();
     protected $strength = 100;
     protected $health = 500;
     protected $intelligence = 100;
+
+    public function __construct(){
+        $this->tableName = 'characters';
+        parent::__construct();
+    }
 
 
     public function setName($name){

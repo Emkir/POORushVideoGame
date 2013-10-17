@@ -5,6 +5,7 @@ class BloodElf extends Character implements BloodElfInterface {
     public function __construct(){
         $this->health += 400;
         $this->intelligence -= 60;
+        parent::__construct();
     }
 
     public function getType(){
