@@ -13,10 +13,10 @@ class Necromancer extends Character implements NecromancerInterface{
 	}
 
 	//
-	public function lifeSteal(Character $enemy);
+	public function lifeSteal(Character $enemy){}
 
 	//
-	public function strengthOfLife(Character $enemy);
+	public function strengthOfLife(Character $enemy){}
 }
 
 ?>
