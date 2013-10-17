@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 17 Octobre 2013 à 14:59
+-- Généré le: Jeu 17 Octobre 2013 à 15:47
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -28,6 +28,7 @@ USE `poorushvideogame`;
 -- Structure de la table `games`
 --
 
+DROP TABLE IF EXISTS `games`;
 CREATE TABLE IF NOT EXISTS `games` (
   `id_game` int(11) NOT NULL,
   `id_player_1` int(11) NOT NULL,
@@ -40,23 +41,10 @@ CREATE TABLE IF NOT EXISTS `games` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `items`
---
-
-CREATE TABLE IF NOT EXISTS `items` (
-  `id_item` int(11) NOT NULL,
-  `item_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `item_strength` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `item_life` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `item_intelligence` varchar(5) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `players`
 --
 
+DROP TABLE IF EXISTS `players`;
 CREATE TABLE IF NOT EXISTS `players` (
   `id_player` int(11) NOT NULL,
   `player_pseudo` int(11) NOT NULL,
@@ -65,6 +53,9 @@ CREATE TABLE IF NOT EXISTS `players` (
   `player_strength` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `player_life` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `player_intelligence` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `player_protection` binary(1) NOT NULL,
+  `player_ability_1` binary(1) NOT NULL,
+  `player_ability_2` binary(1) NOT NULL,
   PRIMARY KEY (`id_player`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
