@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 17 Octobre 2013 à 14:59
+-- Généré le: Jeu 17 Octobre 2013 à 15:15
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -65,6 +65,9 @@ CREATE TABLE IF NOT EXISTS `players` (
   `player_strength` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `player_life` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `player_intelligence` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `player_protection` binary(1) NOT NULL,
+  `player_ability_1` binary(1) NOT NULL,
+  `player_ability_2` binary(1) NOT NULL,
   PRIMARY KEY (`id_player`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
