@@ -6,7 +6,7 @@ interface CharacterInterface
     *	SETTER
     */
     public function setName($name);
-    public function setStrength($strengh);
+    public function setStrength($strength);
     public function setIntelligence($intelligence);
     public function setHealth($hp);
 
@@ -19,7 +19,7 @@ interface CharacterInterface
     public function getHealth();
 
     //
-    public function attack(Player $enemy);
+    public function attack(Character $enemy);
     public function heal();
     public function defend();
 }
