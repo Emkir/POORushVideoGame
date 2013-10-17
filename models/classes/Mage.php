@@ -21,7 +21,7 @@
 		public function __destruct(){}
 
 		/* capacité 1 */
-		public function fireBall(){
+		public function fireBall(Character $enemy){
 
 		}
 
