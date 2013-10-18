@@ -28,7 +28,10 @@
 		/* destructeur */
 		public function __destruct(){}
 
-		/* Passe un tour et inflige 300 de force */
+
+		/* capacité 1 */
+		// Inflige 325 de dégats
+
 		public function fireBall(Character $enemy){
 
             // Doit passer un tour avant exécution

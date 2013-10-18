@@ -41,7 +41,7 @@ class Barbarian extends Character implements BarbarianInterface{
 
     }
 
-    //Réduit la force adverse de 15%
+    //Effraie l'enemi lui faisant perdre 250 de santé
     public function roar(Character $enemy){
 
     }
