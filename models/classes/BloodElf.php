@@ -21,6 +21,7 @@ class BloodElf extends Character implements BloodElfInterface {
 
     //Perd 400 de santé et inflige 400 de dégats 
     public function bloodDrown(Character $enemy){
+        $this->health -= 400;
 
     }
     //Annule les dégâts de la prochaine attaque et se soigne pour 25% des dégâts bloqués
