@@ -61,6 +61,12 @@ abstract class Table
         myQuery($query);
     }
 
+    public function deleteAll(){
+        $query = "delete from `".$this->tableName."`";
+
+        myQuery($query);
+    }
+
     public function save()
     {
         $pk = $this->primaryKey;

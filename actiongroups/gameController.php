@@ -1,6 +1,7 @@
 <?php
     if ($action == 'newGame'){
-        // effacer les données de la partie en cours si existe
+        $playerTable = new Player;
+        $playerTable->deleteAll();
         $characters = new Character();
         $characters->getAll();
         $smarty->assign('characters',$characters->getAll());
