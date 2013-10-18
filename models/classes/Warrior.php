@@ -27,12 +27,47 @@ class Warrior extends Character implements WarriorInterface{
 
 	//Attaque plus puissante (200)
 	public function powerfulHit(Player $enemy){
+        /* on calcule l'attaque */
+        $atkPower = 200;
 
+        /* on récupère la vie de l'ennemi */
+        $health = $enemy->player_health;
+
+        /* on vérifie si il se protège */
+        if($enemy->player_protection == 1){
+            $atkPower = $atkPower * 0.25;
+            $enemy->player_protection = 0;
+        }
+
+        /* on calcule la nouvelle vie de l'ennemi */
+        $remainLife = $health - $atkPower;
+
+        /* on le set */
+        $enemy->player_health = $remainLife;
     }
 
-	//Evite l'attaque
-	public function dodge(){
+	//!inflige 20% de force et -5 pts d'int
+	public function dizziness(Player $enemy){
 
+        /* on calcule l'attaque */
+        $atkPower = $this->player_strength * 0.2;
+
+        /* on récupère la vie de l'ennemi */
+        $health = $enemy->player_health;
+
+        /* on vérifie si il se protège */
+        if($enemy->player_protection == 1){
+            $atkPower = $atkPower * 0.25;
+            $enemy->player_protection = 0;
+        }
+
+        /* on calcule la nouvelle vie de l'ennemi */
+        $remainLife = $health - $atkPower;
+
+        /* on le set */
+        $enemy->player_health = $remainLife;
+
+        $enemy->player_intelligence -= 5;
     }
 
 }
