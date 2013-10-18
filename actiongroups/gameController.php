@@ -86,11 +86,26 @@
         /* une attaque */
         if($_GET["gameAction"] == "attack"){
 
+            $defender = new Player();
+            $defender->id_player = $_GET["defender"];
+            $defender->hydrate();
+
             $player = new Player();
-            $player->attack($_GET["defender"]);
-            $player->savePlayer($_GET["defender"])
+            $player->id_player = $_GET["attacker"];
+            $player->hydrate();
+
+            $player->attack($defender);
+
+            $defender->save();
+
+            /* assign smarty */
+            $smarty->assign("","");
         }
 
+
+
+        /* on renvoie le template du jeu */
+        $smarty->assign('template','game');
     }
 
 ?>

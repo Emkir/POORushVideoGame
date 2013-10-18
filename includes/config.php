@@ -4,7 +4,7 @@
 $config['routes'] = array(
     "newGame" => "game",
     "startGame" => "game",
-    "actionGame" => "game",
+    "gameAction" => "game",
 );
 
 //action par defaut
