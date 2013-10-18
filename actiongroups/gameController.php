@@ -79,4 +79,16 @@
         $smarty->assign('template','game');
     }
 
+    elseif($action == "gameAction"){
+
+        /* une attaque */
+        if($_GET["gameAction"] == "attack"){
+
+            $character = new Character();
+            $character->attack(Character $enemy);
+
+        }
+
+    }
+
 ?>
