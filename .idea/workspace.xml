@@ -7,6 +7,13 @@
     <file path="/Dummy.txt" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382101634154" ignored="false" />
     <file path="/Personnage.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382020291627" ignored="false" />
     <file path="/CharacterInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382021726974" ignored="false" />
+    <file path="$PROJECT_DIR$/models/interfaces/BloodElfInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382110570599" ignored="false" />
+    <file path="$PROJECT_DIR$/models/interfaces/MageInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382110570599" ignored="false" />
+    <file path="$PROJECT_DIR$/models/interfaces/NecromancerInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382110570599" ignored="false" />
+    <file path="$PROJECT_DIR$/models/interfaces/BarbarianInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382110570599" ignored="false" />
+    <file path="$PROJECT_DIR$/models/interfaces/CharacterInterface.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382110570599" ignored="false" />
+    <file path="/Necromancer.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382111697197" ignored="false" />
+    <file path="/Warrior.php" changelist="1a3cf15e-ce41-41c6-a8c4-6b85a23582ac" time="1382118593516" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +36,7 @@
       <file leaf-file-name="Character.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/classes/Character.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-8.692307">
+            <state line="25" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-17.307692">
               <folding />
             </state>
           </provider>
@@ -38,7 +45,25 @@
       <file leaf-file-name="Barbarian.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/classes/Barbarian.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1175" selection-end="1176" vertical-scroll-proportion="-21.576923">
+            <state line="24" column="48" selection-start="735" selection-end="763" vertical-scroll-proportion="-16.615385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Necromancer.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/classes/Necromancer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="0.50180507">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Warrior.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/classes/Warrior.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="41" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-26.423077">
               <folding />
             </state>
           </provider>
@@ -47,25 +72,16 @@
       <file leaf-file-name="BloodElf.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/classes/BloodElf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="685" selection-end="685" vertical-scroll-proportion="-15.923077">
+            <state line="36" column="45" selection-start="1101" selection-end="1101" vertical-scroll-proportion="-24.923077">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mage.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Mage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/classes/Mage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="51" selection-start="803" selection-end="803" vertical-scroll-proportion="0.41516244">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/Table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="57" column="12" selection-start="1434" selection-end="1462" vertical-scroll-proportion="-24.538462">
               <folding />
             </state>
           </provider>
@@ -98,6 +114,9 @@
         <option value="$PROJECT_DIR$/models/classes/Character.php" />
         <option value="$PROJECT_DIR$/models/classes/Barbarian.php" />
         <option value="$PROJECT_DIR$/models/classes/Mage.php" />
+        <option value="$PROJECT_DIR$/models/classes/BloodElf.php" />
+        <option value="$PROJECT_DIR$/models/classes/Necromancer.php" />
+        <option value="$PROJECT_DIR$/models/classes/Warrior.php" />
       </list>
     </option>
   </component>
@@ -258,7 +277,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13808464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24721603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -355,30 +374,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/classes/Character.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-8.692307">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/classes/BloodElf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="685" selection-end="685" vertical-scroll-proportion="-15.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/classes/Barbarian.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1175" selection-end="1176" vertical-scroll-proportion="-21.576923">
+        <state line="36" column="45" selection-start="1101" selection-end="1101" vertical-scroll-proportion="-24.923077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/classes/Mage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="51" selection-start="803" selection-end="803" vertical-scroll-proportion="0.41516244">
+        <state line="57" column="12" selection-start="1434" selection-end="1462" vertical-scroll-proportion="-24.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classes/Character.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-17.307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classes/Barbarian.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="48" selection-start="735" selection-end="763" vertical-scroll-proportion="-16.615385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classes/Warrior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="41" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-26.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classes/Necromancer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="0.50180507">
           <folding />
         </state>
       </provider>
