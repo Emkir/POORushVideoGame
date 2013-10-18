@@ -29,9 +29,9 @@ class BloodElf extends Character implements BloodElfInterface {
         $health = $enemy->player_health;
 
         /* on vérifie si il se protège */
-        if($enemy->player_protection == true){
+        if($enemy->player_protection == 1){
             $atkPower = $atkPower * 0.25;
-            $enemy->player_protection = false;
+            $enemy->player_protection = 0;
         }
 
         /* on calcule la nouvelle vie de l'ennemi */
@@ -40,9 +40,13 @@ class BloodElf extends Character implements BloodElfInterface {
         /* on le set */
         $enemy->player_health = $remainLife;
     }
-    //Annule les dégâts de la prochaine attaque et se soigne pour 25% des dégâts bloqués
+    //se soigne pour 50% de la force ennemie
     public function frenzy(Player $enemy){
+        $enemy_strength = $enemy->player_strength;
 
+        $heal = $enemy_strength * 0.5;
+
+        $this->player_health += $heal;
 
     }
 }
