@@ -34,10 +34,8 @@
 
 		public function fireBall(Character $enemy){
 
-            // Doit passer un tour avant exécution
-
             /* on calcule l'attaque */
-            $atkPower = 300;
+            $atkPower = 325;
 
             /* on récupère la vie de l'ennemi */
             $health = $enemy->health;
