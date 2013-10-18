@@ -28,9 +28,9 @@ class Warrior extends Character implements WarriorInterface{
         $health = $enemy->player_health;
 
         /* on vérifie si il se protège */
-        if($enemy->player_protection == true){
+        if($enemy->player_protection == 1){
             $atkPower = $atkPower * 0.25;
-            $enemy->player_protection = false;
+            $enemy->player_protection = 0;
         }
 
         /* on calcule la nouvelle vie de l'ennemi */
@@ -41,7 +41,7 @@ class Warrior extends Character implements WarriorInterface{
     }
 
 	//!inflige 20% de force et -5 pts d'int
-	public function dizziness(){
+	public function dizziness(Player $enemy){
 
         /* on calcule l'attaque */
         $atkPower = $this->player_strength * 0.2;
@@ -50,9 +50,9 @@ class Warrior extends Character implements WarriorInterface{
         $health = $enemy->player_health;
 
         /* on vérifie si il se protège */
-        if($enemy->player_protection == true){
+        if($enemy->player_protection == 1){
             $atkPower = $atkPower * 0.25;
-            $enemy->player_protection = false;
+            $enemy->player_protection = 0;
         }
 
         /* on calcule la nouvelle vie de l'ennemi */

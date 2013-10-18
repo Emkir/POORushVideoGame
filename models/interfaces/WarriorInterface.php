@@ -8,6 +8,6 @@ interface WarriorInterface {
 	public function powerfulHit(Player $enemy);
 
 	//Evite l'attaque
-	public function dodge();
+	public function dizziness(Player $enemy);
 }
 ?>
