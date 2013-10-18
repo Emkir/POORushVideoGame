@@ -29,6 +29,7 @@
 		public function __destruct(){}
 
 		/* capacité 1 */
+		// Inflige 325 de dégats
 		public function fireBall(Character $enemy){
 
 		}

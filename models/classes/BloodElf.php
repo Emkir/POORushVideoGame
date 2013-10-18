@@ -19,7 +19,7 @@ class BloodElf extends Character implements BloodElfInterface {
         $this->{$object->getFeature()} += $bonus;
     }
 
-    //Perd 250 de santé et paralyse l'ennemi pour un tour
+    //Perd 400 de santé et inflige 400 de dégats 
     public function bloodDrown(Character $enemy){
 
     }
