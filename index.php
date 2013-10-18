@@ -22,6 +22,7 @@ require_once ('./models/classes/BloodElf.php');
 require_once ('./models/classes/Mage.php');
 require_once ('./models/classes/Necromancer.php');
 require_once ('./models/classes/Warrior.php');
+require_once ('./models/classes/Object.php');
 
 //template system Smarty
 require_once('./libs/smarty/Smarty.class.php');

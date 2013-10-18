@@ -13,7 +13,9 @@
         $character1 = new Character();
         $character1->id_characters = $_POST['character1'];
         $character1->hydrate();
-        $player1->save($character1);
+        $characType1=$character1->type;
+        $type1 = new $characType1;
+        $player1->save($type1);
         var_dump($player1);
 
         $player2 = new Player();
@@ -22,7 +24,9 @@
         $character2 = new Character();
         $character2->id_characters = $_POST['character2'];
         $character2->hydrate();
-        $player2->save($character2);
+        $characType2=$character2->type;
+        $type2 = new $characType2;
+        $player2->save($type2);
         var_dump($player2);
         $smarty->assign('template','game');
     }

@@ -2,6 +2,9 @@
 
 	interface MageInterface {
 
+        public function addObject(Object $object);
+
+
 		/* la  boule de feu => 1 tour de chargement puis tape 300 dégats */
 		public function fireBall(Character $enemy);
 

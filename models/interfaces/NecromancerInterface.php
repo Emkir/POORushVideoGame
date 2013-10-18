@@ -2,6 +2,9 @@
 
 interface NecromancerInterface{
 
+    public function addObject(Object $object);
+
+
 //
 	public function lifeSteal(Character $enemy);
 
