@@ -28,14 +28,32 @@
 		/* destructeur */
 		public function __destruct(){}
 
-		/* capacité 1 */
+		/* Passe un tour et inflige 300 de force */
 		public function fireBall(Character $enemy){
 
+            // Doit passer un tour avant exécution
+
+            /* on calcule l'attaque */
+            $atkPower = 300;
+
+            /* on récupère la vie de l'ennemi */
+            $health = $enemy->health;
+
+            /* on vérifie si il se protège */
+            if($enemy->protection == 1){
+                $atkPower = $atkPower * 0.25;
+            }
+
+            /* on calcule la nouvelle vie de l'ennemi */
+            $remainLife = $health - $atkPower;
+
+            /* on le set */
+            $enemy->health = $remainLife;
 		}
 
-		/* capacité 2 */
+		/* Récupère 250 de santé */
 		public function firstAid(){
-
+            $this->health += 250;
 		}
 
 	}
