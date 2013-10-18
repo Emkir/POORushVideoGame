@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 18:11:39
          compiled from "templates\game.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:27840526179dbce04d1-90760668%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+=======
+<?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 22:23:38
+         compiled from "templates\game.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1933952617dbcb02500-38405547%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '342471134fa889cbac88b0960047c24d2d3c5a5f' => 
     array (
       0 => 'templates\\game.tpl',
+<<<<<<< HEAD
       1 => 1382119761,
       2 => 'file',
     ),
@@ -15,6 +22,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+=======
+      1 => 1382134453,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1933952617dbcb02500-38405547',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_52617dbccc2ba6_91949032',
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
   'variables' => 
   array (
     'perso1' => 0,
@@ -29,18 +48,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'health_p2' => 0,
     'strength_p2' => 0,
     'intel_p2' => 0,
+<<<<<<< HEAD
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
   'unifunc' => 'content_526179dbec7d44_55880675',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_526179dbec7d44_55880675')) {function content_526179dbec7d44_55880675($_smarty_tpl) {?><div>
+=======
+    'finish' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52617dbccc2ba6_91949032')) {function content_52617dbccc2ba6_91949032($_smarty_tpl) {?><div>
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
  <table>
 	Joueur 1 - <?php echo $_smarty_tpl->tpl_vars['perso1']->value;?>
 <br>
 	Pseudo : <?php echo $_smarty_tpl->tpl_vars['nickname1']->value;?>
 <br>
+<<<<<<< HEAD
 	Objet &eacute;quip&eacute; :<br>
+=======
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 	Sant&eacute; : <?php echo $_smarty_tpl->tpl_vars['health_p1']->value;?>
 <br>
 	Force : <?php echo $_smarty_tpl->tpl_vars['strength_p1']->value;?>
@@ -63,10 +93,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+<<<<<<< HEAD
+=======
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 &amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special2=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+<<<<<<< HEAD
+=======
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 &amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
 </table>
 	<br><br>
@@ -76,7 +114,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <br>
 	Pseudo : <?php echo $_smarty_tpl->tpl_vars['nickname2']->value;?>
 <br>
+<<<<<<< HEAD
 	Objet &eacute;quip&eacute; :<br>
+=======
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 	Sant&eacute; : <?php echo $_smarty_tpl->tpl_vars['health_p2']->value;?>
 <br>
 	Force : <?php echo $_smarty_tpl->tpl_vars['strength_p2']->value;?>
@@ -99,14 +140,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special1=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+<<<<<<< HEAD
+=======
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 &amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+<<<<<<< HEAD
 &amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
  </table>
 
  <?php if ($_smarty_tpl->tpl_vars['health_p1']->value<1||$_smarty_tpl->tpl_vars['health_p2']->value<1){?>
  Partie termin&eacute;e !
  <?php }?>
+=======
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
+ </table>
+
+    <a href="index.php?action=newGame"><button>Nouvelle partie</button></a>
+
+ <?php if (isset($_smarty_tpl->tpl_vars['finish']->value)){?>
+    <?php echo $_smarty_tpl->tpl_vars['finish']->value;?>
+
+ <?php }?>
+
+>>>>>>> e9c64e23f287ad02149da26e5339ef1afd6473b3
 <?php }} ?>

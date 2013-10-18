@@ -50,7 +50,7 @@ class Warrior extends Character implements WarriorInterface{
 	public function dizziness(Player $enemy){
 
         /* on calcule l'attaque */
-        $atkPower = $this->player_strength * 0.2;
+        $atkPower = $this->strength * 0.2;
 
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;

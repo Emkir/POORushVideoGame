@@ -53,9 +53,10 @@
             $enemy->player_health = $remainLife;
 		}
 
-		/* Récupère 250 de santé */
-		public function firstAid(){
-            $this->player_health += 250;
+		/* Réduit les stats de l'ennemi */
+		public function reduceStat(Player $enemy){
+            $enemy->player_strength -= 10;
+        	$enemy->player_intelligence -= 10;
 		}
 
 	}

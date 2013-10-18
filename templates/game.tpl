@@ -9,8 +9,8 @@
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;attacker={$player1}&amp;defender={$player2}&amp;gameAction=attack"><button>Attaquer</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;healed={$player1}&amp;gameAction=heal"><button>Se soigner</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;protect={$player1}&amp;gameAction=protect"><button>Se prot&eacute;ger</button></a>
-	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special1={$player1}&amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
-	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special2={$player1}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
+	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special1={$player1}&amp;defender={$player2}&amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
+	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special2={$player1}&amp;defender={$player2}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
 </table>
 	<br><br>
 
@@ -24,10 +24,13 @@
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;attacker={$player2}&amp;defender={$player1}&amp;gameAction=attack"><button>Attaquer</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;healed={$player2}&amp;gameAction=heal"><button>Se soigner</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;protect={$player2}&amp;gameAction=protect"><button>Se prot&eacute;ger</button></a>
-	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special1={$player2}&amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
-	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special2={$player2}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
+	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special1={$player2}&amp;defender={$player1}&amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
+	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special2={$player2}&amp;defender={$player1}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
  </table>
 
- {if $health_p1 < 1  or $health_p2 < 1}
- Partie termin&eacute;e !
+    <a href="index.php?action=newGame"><button>Nouvelle partie</button></a>
+
+ {if isset($finish) }
+    {$finish}
  {/if}
+
