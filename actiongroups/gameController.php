@@ -86,9 +86,9 @@
         /* une attaque */
         if($_GET["gameAction"] == "attack"){
 
-            $character = new Character();
-            $character->attack($_GET["player"]);
-
+            $player = new Player();
+            $player->attack($_GET["player"]);
+            $player->save()
         }
 
     }
