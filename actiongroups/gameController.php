@@ -7,7 +7,8 @@
         $smarty->assign('characters',$characters->getAll());
         $smarty->assign('template','newGame');
     }
-    elseif ($action == 'startGame'){ 
+    elseif ($action == 'startGame'){
+        $stop = false;
         $player1 = new Player();
         $player1->nickname = $_POST['nickname1'];
         $player1->id_character = $_POST['character1'];
@@ -82,64 +83,79 @@
     }
 
     elseif($action == "gameAction"){
+        $stop=false;
+        /*Check if any player has 0 Health point */
+        $player1 = new Player();
+        $player1->id_player = $_GET["player1"];
+        $player1->hydrate();
 
-        /* une attaque */
-        if($_GET["gameAction"] == "attack"){
-
-            /* défenseur prends les dégats */
-            $defender = new Player();
-            $defender->id_player = $_GET["defender"];
-            $defender->hydrate();
-
-            /* joueur attaque */
-            $player = new Player();
-            $player->id_player = $_GET["attacker"];
-            $player->hydrate();
-
-            /* l'attaque se passe */
-            $player->attack($defender);
-
-            /* on sauvegarde les informations */
-            $defender->save();
+        $player2 = new Player();
+        $player2->id_player = $_GET["player2"];
+        $player2->hydrate();
+        if($player1->player_health < 1 || $player2->player_health < 1){
+            $stop = true;
+            $smarty->assign('finish','Partie terminée');
         }
 
-        /* soin */
-        if($_GET["gameAction"] == "heal"){
+        if ($stop === false){
+            /* une attaque */
+            if($_GET["gameAction"] == "attack"){
+                /* défenseur prends les dégats */
+                $defender = new Player();
+                $defender->id_player = $_GET["defender"];
+                $defender->hydrate();
 
-            /* joueur qui se soigne */
-            $player = new Player();
-            $player->id_player = $_GET['healed'];
-            $player->hydrate();
+                /* joueur attaque */
+                $player = new Player();
+                $player->id_player = $_GET["attacker"];
+                $player->hydrate();
 
-            /* le joueur se soigne */
-            $player->heal();
 
-            /* on sauvegarde les informations */
-            $player->save();
+                /* l'attaque se passe */
+                $player->attack($defender);
 
-        }
+                var_dump($defender);
 
-        /* soin */
-        if($_GET["gameAction"] == "protect"){
+                /* on sauvegarde les informations */
+                $defender->save();
+            }
 
-            /* joueur qui se soigne */
-            $player = new Player();
-            $player->id_player = $_GET['protect'];
-            $player->hydrate();
+            /* soin */
+            if($_GET["gameAction"] == "heal"){
 
-            /* le joueur se soigne */
-            $player->defend();
+                /* joueur qui se soigne */
+                $player = new Player();
+                $player->id_player = $_GET['healed'];
+                $player->hydrate();
 
-            /* on sauvegarde les informations */
-            $player->save();
+                /* le joueur se soigne */
+                $player->heal();
 
+                /* on sauvegarde les informations */
+                $player->save();
+
+            }
+
+            /* soin */
+            if($_GET["gameAction"] == "protect"){
+
+                /* joueur qui se soigne */
+                $player = new Player();
+                $player->id_player = $_GET['protect'];
+                $player->hydrate();
+
+                /* le joueur se soigne */
+                $player->defend();
+
+                /* on sauvegarde les informations */
+                $player->save();
+
+            }
         }
 
 
         /* INFORMATIONS JOUEUR 1 */
-        $player1 = new Player();
-        $player1->id_player = $_GET["player1"];
-        $player1->hydrate();
+
 
         $character1 = new Character();
         $character1->id_character = $player1->id_character;
@@ -156,9 +172,7 @@
 
 
         /* INFORMATIONS JOUEUR 2 */
-        $player2 = new Player();
-        $player2->id_player = $_GET["player2"];
-        $player2->hydrate();
+
 
         $character2 = new Character();
         $character2->id_character = $player2->id_character;

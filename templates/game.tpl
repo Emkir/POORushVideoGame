@@ -26,6 +26,9 @@
 	<a href="index.php?action=gameAction&amp;player1={$player1}&amp;player2={$player2}&amp;special2={$player2}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
  </table>
 
- {if $health_p1 < 1  or $health_p2 < 1}
- Partie termin&eacute;e !
+    <a href="index.php?action=newGame"><button>Nouvelle partie</button></a>
+
+ {if isset($finish) }
+    {$finish}
  {/if}
+
