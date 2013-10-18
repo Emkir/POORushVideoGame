@@ -16,7 +16,7 @@
         $character1->hydrate();
         $characType1=$character1->type;
         $type1 = new $characType1;
-        $player1->save($type1);
+        $player1->savePlayer($type1);
         var_dump($player1);
 
         $player2 = new Player();
@@ -27,7 +27,7 @@
         $character2->hydrate();
         $characType2=$character2->type;
         $type2 = new $characType2;
-        $player2->save($type2);
+        $player2->savePlayer($type2);
         var_dump($player2);
         $smarty->assign('template','game');
     }

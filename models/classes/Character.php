@@ -6,6 +6,7 @@ class Character extends Table implements CharacterInterface{
     protected $strength = 100;
     protected $health = 500;
     protected $intelligence = 100;
+    protected $protection;
 
     public function __construct(){
         $this->tableName = 'characters';
@@ -38,7 +39,7 @@ class Character extends Table implements CharacterInterface{
 
     //Cause des dégats a l'adversaire equivalents à la force (+ bonus)
     public function attack(Character $enemy){
-
+        
     }
 
     //se soigne d'un montant egal a l'intellligence
@@ -48,7 +49,7 @@ class Character extends Table implements CharacterInterface{
 
     //reduit de 75% les prochains dégats subis
     public function defend(){
-
+        $this->protection = 1;
     }
 }
 
