@@ -114,19 +114,125 @@
             /* soin */
             if($_GET["gameAction"] == "protect"){
 
-                /* joueur qui se soigne */
+
+                /* joueur qui se defend */
                 $player = new Player();
                 $player->id_player = $_GET['protect'];
                 $player->hydrate();
 
-                /* le joueur se soigne */
+                /* le joueur se defend */
                 $player->defend();
 
                 /* on sauvegarde les informations */
                 $player->save();
 
+
+            }
+
+
+            /* capacité spéciale 1 */
+            if($_GET["gameAction"] == "special1"){
+
+                /* le joueur qui attaque */
+                $player = new Player();
+                $player->id_player = $_GET['special1'];
+                $player->hydrate();
+
+                /* le joueur qui défend (même si pas forcément nécessaire) */
+                $defender = new Player();
+                $defender->id_player = $_GET["defender"];
+                $defender->hydrate();
+
+                /* on verifie l'id du personnage et on utlise la capacité associée */
+                if($player->id_character == 1){
+
+                    $perso = new Warrior;
+                    $perso->powerfulHit($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 2){
+
+                    $perso = new Barbarian;
+                    $perso->rage($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 3){
+
+                    $perso = new Mage;
+                    $perso->fireBall($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 4){
+
+                    $perso = new Necromancer;
+                    $perso->damageStat($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 5){
+
+                    $perso = new BloodElf;
+                    $perso->bloodDrown($defender);
+                    $defender->save();
+                }
+
+            }
+
+           /* capacité spéciale 2 */
+            if($_GET["gameAction"] == "special2"){
+
+                /* le joueur qui attaque */
+                $player = new Player();
+                $player->id_player = $_GET['special2'];
+                $player->hydrate();
+
+                /* le joueur qui défend (même si pas forcément nécessaire) */
+                $defender = new Player();
+                $defender->id_player = $_GET["defender"];
+                $defender->hydrate();
+
+                /* on verifie l'id du personnage et on utlise la capacité associée */
+                if($player->id_character == 1){
+
+                    $perso = new Warrior;
+                    $perso->dizziness($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 2){
+
+                    $perso = new Barbarian;
+                    $perso->roar($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 3){
+
+                    $perso = new Mage;
+                    $perso->reduceStat($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 4){
+
+                    $perso = new Necromancer;
+                    $perso->strengthOfLife($defender);
+                    $defender->save();
+                }
+
+                elseif($player->id_character == 5){
+
+                    $perso = new BloodElf;
+                    $perso->frenzy($defender);
+                    $defender->save();
+                }
+
             }
         }
+
 
         /*Check if any player has 0 Health point */
         $player1 = new Player();

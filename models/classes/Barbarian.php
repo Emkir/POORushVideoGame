@@ -21,8 +21,9 @@ class Barbarian extends Character implements BarbarianInterface{
 
     //Tape deux fois avec 75% de sa force
     public function rage(Player $enemy){
+
         /* on calcule l'attaque */
-        $atkPower = $this->player_strength * 1.5;
+        $atkPower = $this->strength * 1.5;
 
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;
