@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 20:09:30
+<?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 22:23:38
          compiled from "templates\game.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1933952617dbcb02500-38405547%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '342471134fa889cbac88b0960047c24d2d3c5a5f' => 
     array (
       0 => 'templates\\game.tpl',
-      1 => 1382126965,
+      1 => 1382134453,
       2 => 'file',
     ),
   ),
@@ -63,10 +63,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special2=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
 </table>
 	<br><br>
@@ -98,10 +100,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special1=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
 	<a href="index.php?action=gameAction&amp;player1=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;player2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
 &amp;special2=<?php echo $_smarty_tpl->tpl_vars['player2']->value;?>
+&amp;defender=<?php echo $_smarty_tpl->tpl_vars['player1']->value;?>
 &amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
  </table>
 

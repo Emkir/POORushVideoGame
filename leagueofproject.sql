@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 18 Octobre 2013 à 11:58
+-- Généré le: Ven 18 Octobre 2013 à 23:00
 -- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.16
+-- Version de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -79,15 +79,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `player_ability_2` binary(1) DEFAULT NULL,
   PRIMARY KEY (`id_player`),
   KEY `fk_players_characters1` (`id_character`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=174 ;
-
---
--- Contenu de la table `players`
---
-
-INSERT INTO `players` (`id_player`, `nickname`, `id_character`, `player_strength`, `player_health`, `player_intelligence`, `player_protection`, `player_ability_1`, `player_ability_2`) VALUES
-(172, 'Bob', 5, '110', '900', '40', '\0', '\0', '\0'),
-(173, 'Tom', 3, '100', '350', '184', '\0', '\0', '\0');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=246 ;
 
 --
 -- Contraintes pour les tables exportées
