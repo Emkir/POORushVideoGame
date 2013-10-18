@@ -7,7 +7,7 @@ interface BloodElfInterface
     //Perd 250 de santé et paralyse l'ennemi pour un tour
     public function bloodDrown(Player $enemy);
 
-    //Annule les dégâts de la prochaine attaque et se soigne pour 25% des dégâts bloqués
+    //se soigne pour 50% de la force ennemie
     public function frenzy(Player $enemy);
 
 }
