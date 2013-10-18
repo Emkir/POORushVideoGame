@@ -52,9 +52,10 @@
             $health = $enemy->player_health;
 
             /* on vérifie si il se protège */
-            if($enemy->player_protection == 1){
+
+            if($enemy->player_protection == true){
                 $atkPower = $atkPower * 0.25;
-                $enemy->setProtection(0);
+                $enemy->player_protection = false;
             }
 
             /* on calcule la nouvelle vie de l'ennemi */
@@ -67,12 +68,13 @@
 
         //se soigne d'un montant egal a l'intellligence
         public function heal(){
-            $this->player_health += $this->intelligence;
+            $this->player_health += $this->player_intelligence;
         }
 
         //reduit de 75% les prochains dégats subis
         public function defend(){
-            $this->player_protection = 1;
+            $this->player_protection = true;
+
         }
 
     }
