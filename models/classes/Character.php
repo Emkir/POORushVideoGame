@@ -6,6 +6,7 @@ class Character extends Table implements CharacterInterface{
     protected $strength = 100;
     protected $health = 500;
     protected $intelligence = 100;
+    protected $name;
 
     public function __construct(){
         $this->tableName = 'characters';
@@ -25,6 +26,10 @@ class Character extends Table implements CharacterInterface{
     /*
     *	GETTER
     */
+
+    public function getName(){
+        return $this->name;
+    }
     public function getStrength(){
         return $this->strength;
     }
