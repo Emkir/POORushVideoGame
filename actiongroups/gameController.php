@@ -87,8 +87,8 @@
         if($_GET["gameAction"] == "attack"){
 
             $player = new Player();
-            $player->attack($_GET["player"]);
-            $player->save()
+            $player->attack($_GET["defender"]);
+            $player->savePlayer($_GET["defender"])
         }
 
     }
