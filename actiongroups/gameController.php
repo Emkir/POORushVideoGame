@@ -99,22 +99,92 @@
         /* une attaque */
         if($_GET["gameAction"] == "attack"){
 
+            /* défenseur prends les dégats */
             $defender = new Player();
             $defender->id_player = $_GET["defender"];
             $defender->hydrate();
 
+            /* joueur attaque */
             $player = new Player();
             $player->id_player = $_GET["attacker"];
             $player->hydrate();
 
+            /* l'attaque se passe */
             $player->attack($defender);
 
+            /* on sauvegarde les informations */
             $defender->save();
-
-            /* assign smarty */
-            $smarty->assign("","");
         }
 
+        /* soin */
+        if($_GET["gameAction"] == "heal"){
+
+            /* joueur qui se soigne */
+            $player = new Player();
+            $player->id_player = $_GET['healed'];
+            $player->hydrate();
+
+            /* le joueur se soigne */
+            $player->heal();
+
+            /* on sauvegarde les informations */
+            $player->save();
+
+        }
+
+        /* soin */
+        if($_GET["gameAction"] == "protect"){
+
+            /* joueur qui se soigne */
+            $player = new Player();
+            $player->id_player = $_GET['protect'];
+            $player->hydrate();
+
+            /* le joueur se soigne */
+            $player->defend();
+
+            /* on sauvegarde les informations */
+            $player->save();
+
+        }
+
+
+        /* INFORMATIONS JOUEUR 1 */
+        $player1 = new Player();
+        $player1->id_player = $_GET["player1"];
+        $player1->hydrate();
+
+        $character1 = new Character();
+        $character1->id_character = $player1->id_character;
+        $character1->hydrate();
+
+        //ASSIGN SMARTY PLAYER 1
+
+        $smarty->assign("nickname1",$player1->nickname);
+        $smarty->assign('perso1',$character1->name);
+        $smarty->assign('player1',$player1->id_player);
+        $smarty->assign("health_p1",$player1->player_health);
+        $smarty->assign("strength_p1",$player1->player_strength);
+        $smarty->assign("intel_p1",$player1->player_intelligence);
+
+
+        /* INFORMATIONS JOUEUR 2 */
+        $player2 = new Player();
+        $player2->id_player = $_GET["player2"];
+        $player2->hydrate();
+
+        $character2 = new Character();
+        $character2->id_character = $player2->id_character;
+        $character2->hydrate();
+       
+
+        //ASSIGN SMARTY PLAYER 2
+        $smarty->assign("nickname2",$player2->nickname);
+        $smarty->assign('perso2',$character2->name);
+        $smarty->assign('player2',$player2->id_player);
+        $smarty->assign("health_p2",$player2->player_health);
+        $smarty->assign("strength_p2",$player2->player_strength);
+        $smarty->assign("intel_p2",$player2->player_intelligence);
 
 
         /* on renvoie le template du jeu */

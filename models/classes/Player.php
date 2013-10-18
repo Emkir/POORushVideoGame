@@ -14,6 +14,11 @@
             parent::__construct();
         }
 
+        /* set protection */
+        public function setProtection($protection){
+            $this->player_protection = $protection;
+        }
+
         public function hydrate()
         {
             parent::hydrate();
@@ -68,12 +73,28 @@
 
         //se soigne d'un montant egal a l'intellligence
         public function heal(){
+
+
+            /* on recupere la vie du perso */
+            $health = $this->player_health;
+
+            /* on ajoute l'intelligence a sa vie */
+            $newHealth = $this->player_intelligence + $health;
+
+            /* on la set */
+            $this->player_health = $newHealth;
+
+
             $this->player_health += $this->player_intelligence;
+
         }
 
         //reduit de 75% les prochains dégats subis
         public function defend(){
-            $this->player_protection = true;
+
+
+            /* on modifie la protection du joueur */
+            $this->player_protection = 1;
 
         }
 
