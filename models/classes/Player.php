@@ -46,13 +46,13 @@
         public function attack(Player $enemy){
             
             /* on calcule l'attaque */
-            $atkPower = $this->strength;
+            $atkPower = $this->player_strength;
 
             /* on récupère la vie de l'ennemi */
-            $health = $enemy->health;
+            $health = $enemy->player_health;
 
             /* on vérifie si il se protège */
-            if($enemy->protection == 1){
+            if($enemy->player_protection == 1){
                 $atkPower = $atkPower * 0.25;
                 $enemy->setProtection(0);
             }
@@ -61,18 +61,18 @@
             $remainLife = $health - $atkPower;
 
             /* on le set */
-            $enemy->health = $remainLife;
+            $enemy->player_health = $remainLife;
 
         }
 
         //se soigne d'un montant egal a l'intellligence
         public function heal(){
-            $this->health += $this->intelligence;
+            $this->player_health += $this->intelligence;
         }
 
         //reduit de 75% les prochains dégats subis
         public function defend(){
-            $this->protection = 1;
+            $this->player_protection = 1;
         }
 
     }
