@@ -28,6 +28,7 @@
         //ASSIGN SMARTY PLAYER 1
         $smarty->assign("nickname1",$_POST['nickname1']);
         $smarty->assign('perso1',$perso1[0]->name);
+        $smarty->assign('player1',$player1->id_player);
 
 
         $player1->savePlayer($type1);
@@ -59,6 +60,7 @@
         //ASSIGN SMARTY PLAYER 2
         $smarty->assign("nickname2",$_POST['nickname2']);
         $smarty->assign('perso2',$perso2[0]->name);
+        $smarty->assign('player2',$player2->id_player);
 
         $player2->savePlayer($type2);
 
@@ -77,6 +79,18 @@
 
 
         $smarty->assign('template','game');
+    }
+
+    elseif($action == "gameAction"){
+
+        /* une attaque */
+        if($_GET["gameAction"] == "attack"){
+
+            $character = new Character();
+            $character->attack($_GET["player"]);
+
+        }
+
     }
 
 ?>
