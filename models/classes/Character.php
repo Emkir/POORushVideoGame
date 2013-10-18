@@ -24,6 +24,9 @@ class Character extends Table implements CharacterInterface{
     public function setHealth($hp){
         $this->health = $hp;
     }
+    public function setProtection($protection){
+        $this->protection = $protection;
+    }
 
     /*
     *	GETTER
@@ -41,6 +44,9 @@ class Character extends Table implements CharacterInterface{
     public function getHealth(){
         return $this->health;
     }
+    public function getProtection(){
+        return $this->protection;
+    }
 
 
     //Cause des dégats a l'adversaire equivalents à la force (+ bonus)
@@ -55,6 +61,7 @@ class Character extends Table implements CharacterInterface{
         /* on vérifie si il se protège */
         if($enemy->protection == 1){
             $atkPower = $atkPower * 0.25;
+            $enemy->setProtection(0);
         }
 
         /* on calcule la nouvelle vie de l'ennemi */
