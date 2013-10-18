@@ -148,6 +148,7 @@ abstract class Table
         if(array_search($order[0], $this->fields)){
             $query .= " ORDER BY ".$orderBy."";
         }
+        var_dump($query);
         $data = myFetchAllAssoc($query);
         $array = array();
         if($data){
@@ -165,7 +166,9 @@ abstract class Table
                 $array[] = $var;
             }
         }
+
         return $array;
+
     }
 
     public function hydrate()

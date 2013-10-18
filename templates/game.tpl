@@ -1,6 +1,6 @@
 <div>
  <table>
-	Joueur 1 - {$character1}<br>
+	Joueur 1 - {$perso1}<br>
 	Pseudo : {$nickname1}<br>
 	Sant&eacute; :<br>
 	Force :<br>
@@ -16,7 +16,7 @@
 	<br><br>
 
  <table>
-	Joueur 2 - {$character2}<br>
+	Joueur 2 - {$perso2}<br>
 	Pseudo : {$nickname2}<br>
 	Sant&eacute; :<br>
 	Force :<br>

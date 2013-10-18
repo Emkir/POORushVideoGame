@@ -7,7 +7,7 @@
         $smarty->assign('characters',$characters->getAll());
         $smarty->assign('template','newGame');
     }
-    elseif ($action == 'startGame'){
+    elseif ($action == 'startGame'){ 
         $player1 = new Player();
         $player1->nickname = $_POST['nickname1'];
         $player1->id_character = $_POST['character1'];
@@ -17,9 +17,18 @@
         $characType1=$character1->type;
         $type1 = new $characType1;
         $player1->save($type1);
-        $smarty->assign('objet1',$player1);
+        //var_dump($character1);
+        $perso1 = $character1->getAll('id_characters='.$character1->id_characters);
+        //var_dump($perso1[0]->name);
+       // $playergame1 = $player1->getAll('id_player='.$player1->id_player);
+
+        //var_dump($playergame1);
+
+        //ASSIGN SMARTY PLAYER 1
         $smarty->assign("nickname1",$_POST['nickname1']);
-        $smarty->assign("character1",$_POST['character1']);
+        $smarty->assign('perso1',$perso1[0]->name);
+
+
         $player1->savePlayer($type1);
 
         var_dump($player1);
@@ -34,11 +43,21 @@
         $type2 = new $characType2;
 
         $player2->save($type2);
+        $perso2 = $character1->getAll('id_characters='.$character2->id_characters);
+
+        //ASSIGN SMARTY PLAYER 2
         $smarty->assign("nickname2",$_POST['nickname2']);
-        $smarty->assign("character2",$_POST['character2']);
+        $smarty->assign('perso2',$perso2[0]->name);
+
         $player2->savePlayer($type2);
-        var_dump($player2);
-        $smarty->assign('template','game','');
+      //  var_dump($player2);
+      
+
+
+
+
+
+        $smarty->assign('template','game');
     }
 
 ?>
