@@ -19,11 +19,11 @@ class BloodElf extends Character implements BloodElfInterface {
         $this->{$object->getFeature()} += $bonus;
     }
 
-    //Perd 400 de santé et inflige 400 de dégats 
+    //Inflige 50 dégats et réduit les stats de 5 points 
     public function bloodDrown(Player $enemy){
-        $this->player_health -= 400;
+
         /* on calcule l'attaque */
-        $atkPower = 400;
+        $atkPower = 50;
 
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;
@@ -39,14 +39,35 @@ class BloodElf extends Character implements BloodElfInterface {
 
         /* on le set */
         $enemy->player_health = $remainLife;
+
+        /* on reduit les stats */
+        $enemy->player_strength -= 5;
+        $enemy->player_intelligence -= 5;
     }
-    //se soigne pour 50% de la force ennemie
+
+    //Inflige 30 degats et reduit les stats de 10
     public function frenzy(Player $enemy){
-        $enemy_strength = $enemy->player_strength;
+        /* on calcule l'attaque */
+        $atkPower = 30;
 
-        $heal = $enemy_strength * 0.5;
+        /* on récupère la vie de l'ennemi */
+        $health = $enemy->player_health;
 
-        $this->player_health += $heal;
+        /* on vérifie si il se protège */
+        if($enemy->player_protection == 1){
+            $atkPower = $atkPower * 0.25;
+            $enemy->player_protection = 0;
+        }
+
+        /* on calcule la nouvelle vie de l'ennemi */
+        $remainLife = $health - $atkPower;
+
+        /* on le set */
+        $enemy->player_health = $remainLife;
+
+        /* on reduit les stats */
+        $enemy->player_strength -= 10;
+        $enemy->player_intelligence -= 10;
 
     }
 }

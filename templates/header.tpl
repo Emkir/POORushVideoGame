@@ -9,6 +9,9 @@
         <meta name="author" content="Koinkoin">
         <meta name="description" content="rusher pour un jeu">
         <meta name="keywords" content="POO, LOP, Rush, Pas dodo">
+        <script type="text/javascript" language="javascript" src="./libs/jQuery/jQuery_2_0_3.js"></script>
+        <script type="text/javascript" language="javascript" src="./libs/jQuery/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+        <script type="text/javascript" language="javascript" src="./styles/javascript/script.js"></script>
 
         <!-- STYLE -->
         <link rel="stylesheet" type="text/css" href="./styles/style.css"/>

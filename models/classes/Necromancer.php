@@ -19,11 +19,11 @@ class Necromancer extends Character implements NecromancerInterface{
         $this->{$object->getFeature()} += $bonus;
     }
 
-	//Inflige 150 force et donne 75 santé
-	public function lifeSteal(Player $enemy){
+	//Met des dégats en fonction de la force adverse (0.5)
+	public function damageStat(Player $enemy){
 
         /* on calcule l'attaque */
-        $atkPower = 150;
+        $atkPower = $enemy->player_strength/2;
 
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;
@@ -40,21 +40,19 @@ class Necromancer extends Character implements NecromancerInterface{
         /* on le set */
         $enemy->player_health = $remainLife;
 
-        /* On met à jour la vie du joueur */
-        $this->player_health += 75;
     }
 
-	//Inflige 250 force et enlève 150 santé
+	//Inflige 1/8 de la vie de l'adversaire sans tenir compte de la protection
 	public function strengthOfLife(Player $enemy){
-        /* on calcule l'attaque */
-        $atkPower = 250;
-
+        
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;
 
+        /* on calcule l'attaque */
+        $atkPower = $health/8;
+
         /* on vérifie si il se protège */
         if($enemy->player_protection == 1){
-            $atkPower = $atkPower * 0.25;
             $enemy->player_protection = 0;
         }
 
@@ -63,9 +61,6 @@ class Necromancer extends Character implements NecromancerInterface{
 
         /* on le set */
         $enemy->player_health = $remainLife;
-
-        /* On met à jour la vie du joueur */
-        $this->player_health -= 150;
     }
 }
 

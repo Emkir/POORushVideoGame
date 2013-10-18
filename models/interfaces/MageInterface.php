@@ -9,7 +9,7 @@
 		public function fireBall(Player $enemy);
 
 		/* premiers soins => rend 250 PV */
-		public function firstAid();
+		public function reduceStat(Player $enemy);
 
 	}
 
