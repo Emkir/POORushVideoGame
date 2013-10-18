@@ -26,7 +26,7 @@
             }
         }
 
-        public function save($character){
+        public function save(Character $character){
 
             if(is_null($this->player_health)){
                 $this->player_health = $character->getHealth();

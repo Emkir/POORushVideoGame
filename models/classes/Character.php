@@ -43,7 +43,7 @@ class Character extends Table implements CharacterInterface{
 
     //se soigne d'un montant egal a l'intellligence
     public function heal(){
-
+        $this->health += $this->intelligence;
     }
 
     //reduit de 75% les prochains dégats subis
