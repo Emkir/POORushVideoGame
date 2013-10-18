@@ -2,12 +2,18 @@
 
 class Warrior extends Character implements WarriorInterface{
 	CONST type = 'Warrior';
+	protected $objectName = 'Bouclier de vie';
 
 	public function __construct(){
 		$this->strength += 30;
         $objectWarior = new Object('Bouclier de vie',15,'health');
         $this->addObject($objectWarior);
+		parent::setInventory($objectWarior);
 		parent::__construct();
+	}
+	
+	public function getObjectName(){
+		return $this->objectName;
 	}
 
 	public function getType(){

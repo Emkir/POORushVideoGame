@@ -2,6 +2,7 @@
  <table>
 	Joueur 1 - {$perso1}<br>
 	Pseudo : {$nickname1}<br>
+	Objet &eacute;quip&eacute; :<br>
 	Sant&eacute; : {$health_p1}<br>
 	Force : {$strength_p1}<br>
 	Intelligence : {$intel_p1}<br> 
@@ -16,6 +17,7 @@
  <table>
 	Joueur 2 - {$perso2}<br>
 	Pseudo : {$nickname2}<br>
+	Objet &eacute;quip&eacute; :<br>
 	Sant&eacute; : {$health_p2}<br>
 	Force : {$strength_p2}<br>
 	Intelligence : {$intel_p2}<br> 
