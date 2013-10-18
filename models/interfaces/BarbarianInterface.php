@@ -6,8 +6,8 @@ interface BarbarianInterface
 
 
     //Tape deux fois avec 75% de sa force
-    public function rage(Character $enemy);
+    public function rage(Player $enemy);
     //Réduit la force adverse de 15%
-    public function roar(Character $enemy);
+    public function roar(Player $enemy);
 }
 ?>

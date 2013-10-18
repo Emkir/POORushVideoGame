@@ -41,7 +41,7 @@ class BloodElf extends Character implements BloodElfInterface {
         $enemy->player_health = $remainLife;
     }
     //Annule les dégâts de la prochaine attaque et se soigne pour 25% des dégâts bloqués
-    public function frenzy(Character $enemy){
+    public function frenzy(Player $enemy){
 
 
     }

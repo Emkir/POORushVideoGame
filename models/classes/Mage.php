@@ -32,30 +32,30 @@
 		/* capacité 1 */
 		// Inflige 325 de dégats
 
-		public function fireBall(Character $enemy){
+		public function fireBall(Player $enemy){
 
             /* on calcule l'attaque */
             $atkPower = 325;
 
             /* on récupère la vie de l'ennemi */
-            $health = $enemy->health;
+            $health = $enemy->player_health;
 
             /* on vérifie si il se protège */
-            if($enemy->protection == true){
+            if($enemy->player_protection == true){
                 $atkPower = $atkPower * 0.25;
-                $enemy->protection = false;
+                $enemy->player_protection = false;
             }
 
             /* on calcule la nouvelle vie de l'ennemi */
             $remainLife = $health - $atkPower;
 
             /* on le set */
-            $enemy->health = $remainLife;
+            $enemy->player_health = $remainLife;
 		}
 
 		/* Récupère 250 de santé */
 		public function firstAid(){
-            $this->health += 250;
+            $this->player_health += 250;
 		}
 
 	}
