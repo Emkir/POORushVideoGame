@@ -28,9 +28,9 @@ class Barbarian extends Character implements BarbarianInterface{
         $health = $enemy->player_health;
 
         /* on vérifie si il se protège */
-        if($enemy->player_protection == true){
+        if($enemy->player_protection == 1){
             $atkPower = $atkPower * 0.25;
-            $enemy->player_protection = false;
+            $enemy->player_protection = 0;
         }
 
         /* on calcule la nouvelle vie de l'ennemi */
@@ -49,9 +49,9 @@ class Barbarian extends Character implements BarbarianInterface{
         $health = $enemy->player_health;
 
         /* on vérifie si il se protège */
-        if($enemy->player_protection == true){
+        if($enemy->player_protection == 1){
             $atkPower = 250 * 0.25;
-            $enemy->player_protection = false;
+            $enemy->player_protection = 0;
         }
 
         /* on calcule la nouvelle vie de l'ennemi */
