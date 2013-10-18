@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 11:35:42
+<?php /* Smarty version Smarty-3.1.13, created on 2013-10-18 13:03:23
          compiled from "templates\game.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3082352610abaa0c756-45194854%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '342471134fa889cbac88b0960047c24d2d3c5a5f' => 
     array (
       0 => 'templates\\game.tpl',
-      1 => 1382096139,
+      1 => 1382101402,
       2 => 'file',
     ),
   ),
@@ -70,4 +70,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<input type="button" value="Se prot&eacute;ger" name="protect2">
 	<input type="button" value="Sp&eacute;cial 1" name="special2_1">
 	<input type="button" value="Sp&eacute;cial 2" name="special2_2">
- </table><?php }} ?>
+ </table>
+
+ <?php if ($_smarty_tpl->tpl_vars['health_p1']->value==0||$_smarty_tpl->tpl_vars['health_p2']->value==0){?>
+ Partie termin&eacute;e !
+ <?php }?>
+<?php }} ?>

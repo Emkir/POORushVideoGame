@@ -9,8 +9,7 @@
 	<input type="button" value="Se soigner" name="heal1">
 	<input type="button" value="Se prot&eacute;ger" name="protect1">
 	<input type="button" value="Sp&eacute;cial 1" name="special1_1">
-	<input type="button" value="Sp&eacute;cial 2" name="special1_2"><br/>
-	
+	<input type="button" value="Sp&eacute;cial 2" name="special1_2"><br>
  </table>
 
 	<br><br>
@@ -27,3 +26,7 @@
 	<input type="button" value="Sp&eacute;cial 1" name="special2_1">
 	<input type="button" value="Sp&eacute;cial 2" name="special2_2">
  </table>
+
+ {if $health_p1 == 0  or $health_p2 == 0}
+ Partie termin&eacute;e !
+ {/if}
