@@ -43,7 +43,22 @@ class Barbarian extends Character implements BarbarianInterface{
 
     //Effraie l'enemi lui faisant perdre 250 de santé
     public function roar(Character $enemy){
+        $atkPower = 250;
 
+        /* on récupère la vie de l'ennemi */
+        $health = $enemy->health;
+
+        /* on vérifie si il se protège */
+        if($enemy->protection == true){
+            $atkPower = 250 * 0.25;
+            $enemy->protection = false;
+        }
+
+        /* on calcule la nouvelle vie de l'ennemi */
+        $remainLife = $health - $atkPower;
+
+        /* on le set */
+        $enemy->health = $remainLife;
     }
 }
 
