@@ -20,6 +20,8 @@
         $smarty->assign('objet1',$player1);
         $smarty->assign("nickname1",$_POST['nickname1']);
         $smarty->assign("character1",$_POST['character1']);
+        $player1->savePlayer($type1);
+
         var_dump($player1);
 
         $player2 = new Player();
@@ -30,9 +32,11 @@
         $character2->hydrate();
         $characType2=$character2->type;
         $type2 = new $characType2;
+
         $player2->save($type2);
         $smarty->assign("nickname2",$_POST['nickname2']);
         $smarty->assign("character2",$_POST['character2']);
+        $player2->savePlayer($type2);
         var_dump($player2);
         $smarty->assign('template','game','');
     }

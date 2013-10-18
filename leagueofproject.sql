@@ -18,9 +18,7 @@ SET time_zone = "+00:00";
 
 --
 -- Base de données: `leagueofproject`
---
-CREATE DATABASE IF NOT EXISTS `leagueofproject` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `leagueofproject`;
+
 
 -- --------------------------------------------------------
 
