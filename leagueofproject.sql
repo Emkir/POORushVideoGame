@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 18 Octobre 2013 à 07:25
--- Version du serveur: 5.1.53-community-log
--- Version de PHP: 5.3.4
+-- Généré le: Ven 18 Octobre 2013 à 11:58
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -18,7 +18,9 @@ SET time_zone = "+00:00";
 
 --
 -- Base de données: `leagueofproject`
-
+--
+CREATE DATABASE IF NOT EXISTS `leagueofproject` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `leagueofproject`;
 
 -- --------------------------------------------------------
 
@@ -27,17 +29,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `characters` (
-  `id_characters` int(11) NOT NULL AUTO_INCREMENT,
+  `id_character` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_characters`)
+  PRIMARY KEY (`id_character`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `characters`
 --
 
-INSERT INTO `characters` (`id_characters`, `name`, `type`) VALUES
+INSERT INTO `characters` (`id_character`, `name`, `type`) VALUES
 (1, 'Bromanidd le guerrier', 'Warrior'),
 (2, 'Graurk le barbare', 'Barbarian'),
 (3, 'Oudin le mage', 'Mage'),
@@ -77,7 +79,15 @@ CREATE TABLE IF NOT EXISTS `players` (
   `player_ability_2` binary(1) DEFAULT NULL,
   PRIMARY KEY (`id_player`),
   KEY `fk_players_characters1` (`id_character`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=174 ;
+
+--
+-- Contenu de la table `players`
+--
+
+INSERT INTO `players` (`id_player`, `nickname`, `id_character`, `player_strength`, `player_health`, `player_intelligence`, `player_protection`, `player_ability_1`, `player_ability_2`) VALUES
+(172, 'Bob', 5, '110', '900', '40', '\0', '\0', '\0'),
+(173, 'Tom', 3, '100', '350', '184', '\0', '\0', '\0');
 
 --
 -- Contraintes pour les tables exportées
@@ -94,7 +104,7 @@ ALTER TABLE `games`
 -- Contraintes pour la table `players`
 --
 ALTER TABLE `players`
-  ADD CONSTRAINT `fk_players_characters1` FOREIGN KEY (`id_character`) REFERENCES `characters` (`id_characters`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_players_characters1` FOREIGN KEY (`id_character`) REFERENCES `characters` (`id_character`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
