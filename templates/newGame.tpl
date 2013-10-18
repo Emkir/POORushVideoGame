@@ -5,7 +5,7 @@
         Votre personnage : 
          <select name="character1">
             {foreach $characters as $object}
-                <option value={$object->id_characters}>{$object->name}</option>
+                <option value={$object->id_character}>{$object->name}</option>
             {/foreach}
         </select><br>
     </div>
@@ -15,7 +15,7 @@
         Votre personnage : 
          <select name="character2">
             {foreach $characters as $object}
-                <option value={$object->id_characters}>{$object->name}</option>
+                <option value={$object->id_character}>{$object->name}</option>
             {/foreach}
         </select><br>
         <input type="submit" name="submit" value="Start!" >
