@@ -7,6 +7,22 @@ require_once('./includes/tools.php');
 require_once('./models/Table.php');
 require_once ('./models/dbtools.php');
 
+//inclusion classes and interfaces
+require_once ('./models/interfaces/CharacterInterface.php');
+require_once ('./models/interfaces/BarbarianInterface.php');
+require_once ('./models/interfaces/BloodElfInterface.php');
+require_once ('./models/interfaces/MageInterface.php');
+require_once ('./models/interfaces/NecromancerInterface.php');
+require_once ('./models/interfaces/WarriorInterface.php');
+
+require_once ('./models/classes/Character.php');
+require_once ('./models/classes/Player.php');
+require_once ('./models/classes/Barbarian.php');
+require_once ('./models/classes/BloodElf.php');
+require_once ('./models/classes/Mage.php');
+require_once ('./models/classes/Necromancer.php');
+require_once ('./models/classes/Warrior.php');
+
 //template system Smarty
 require_once('./libs/smarty/Smarty.class.php');
 $smarty = new Smarty();

@@ -2,6 +2,7 @@
 //routeur function
 function routeur($action){
     global $config;
+    global $smarty;
     //check if the action exists on the config file
     if (!array_key_exists($action, $config['routes']))
         die('action ill&eacute;gale');

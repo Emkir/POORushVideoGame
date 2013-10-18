@@ -1,7 +1,7 @@
 <?php
 
-abstract class Character extends Table implements CharacterInterface{
-    protected $name;
+class Character extends Table implements CharacterInterface{
+
     protected $inventory = array();
     protected $strength = 100;
     protected $health = 500;
@@ -12,10 +12,6 @@ abstract class Character extends Table implements CharacterInterface{
         parent::__construct();
     }
 
-
-    public function setName($name){
-        $this->name = $name;
-    }
     public function setStrength($strength){
         $this->strength = $strength;
     }
@@ -29,9 +25,6 @@ abstract class Character extends Table implements CharacterInterface{
     /*
     *	GETTER
     */
-    public function getName(){
-        return $this->name;
-    }
     public function getStrength(){
         return $this->strength;
     }
@@ -41,6 +34,7 @@ abstract class Character extends Table implements CharacterInterface{
     public function getHealth(){
         return $this->health;
     }
+
 
     //Cause des dégats a l'adversaire equivalents à la force (+ bonus)
     public function attack(Character $enemy){

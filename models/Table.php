@@ -14,6 +14,24 @@ abstract class Table
             die('Table: table name is required');
     }
 
+    public function __set($name,$value){
+        if (array_key_exists($name,$this->fields)){
+            $this->$name = $value;
+        }
+        else{
+            die('Set: Ce champ '.$name.' n\'existe pas');
+        }
+    }
+
+    public function __get($name){
+        if (array_key_exists($name,$this->fields)){
+            return $this->$name;
+        }
+        else{
+            die('Get: Ce champ '.$name.' n\'existe pas');
+        }
+    }
+
     private function detectFields()
     {
         $data = myFetchAllAssoc("SHOW COLUMNS FROM `".$this->tableName."`");
@@ -109,6 +127,39 @@ abstract class Table
             $insert_id = myLastInsertId();
             $this->$pk = $insert_id;
         }
+    }
+
+    public function getAll($where=false,$orderBy=false){
+        $pk = $this->primaryKey;
+        //on construit et éxécute notre requête
+        $query = "SELECT * FROM `".$this->tableName."`";
+
+        if($where){
+            $query .= " WHERE ".$where;
+        }
+
+        $order=explode(' ',$orderBy);
+        if(array_search($order[0], $this->fields)){
+            $query .= " ORDER BY ".$orderBy."";
+        }
+        $data = myFetchAllAssoc($query);
+        $array = array();
+        if($data){
+
+            foreach ($data as $object){
+                //on recup le nom de la classe
+                $class = get_class($this);
+
+                $var = new $class;
+                $var->$pk = $object[$this->primaryKey];
+
+                //var_dump($var);die();
+                $var->hydrate();
+
+                $array[] = $var;
+            }
+        }
+        return $array;
     }
 
     public function hydrate()

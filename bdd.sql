@@ -1,75 +1,68 @@
--- phpMyAdmin SQL Dump
--- version 4.0.4
--- http://www.phpmyadmin.net
---
--- Client: localhost
--- Généré le: Jeu 17 Octobre 2013 à 15:47
--- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.12
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE SCHEMA IF NOT EXISTS `leagueOfProject` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `leagueOfProject` ;
+
+-- -----------------------------------------------------
+-- Table `leagueOfProject`.`characters`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `leagueOfProject`.`characters` (
+  `id_characters` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(255) NOT NULL ,
+  `type` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id_characters`) )
+ENGINE = InnoDB;
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+-- -----------------------------------------------------
+-- Table `leagueOfProject`.`players`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `leagueOfProject`.`players` (
+  `id_player` INT NOT NULL ,
+  `nickname` INT NOT NULL ,
+  `id_character` INT NOT NULL ,
+  `player_strength` VARCHAR(45) NOT NULL ,
+  `player_life` VARCHAR(45) NOT NULL ,
+  `player_intelligence` VARCHAR(45) NOT NULL ,
+  `player_protection` BINARY(1) NULL ,
+  `player_ability_1` BINARY(1) NULL ,
+  `player_ability_2` BINARY(1) NULL ,
+  PRIMARY KEY (`id_player`, `id_character`) ,
+  INDEX `fk_players_characters1` (`id_character` ASC) ,
+  CONSTRAINT `fk_players_characters1`
+    FOREIGN KEY (`id_character` )
+    REFERENCES `leagueOfProject`.`characters` (`id_characters` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
---
--- Base de données: `poorushvideogame`
---
-CREATE DATABASE IF NOT EXISTS `poorushvideogame` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `poorushvideogame`;
 
--- --------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `leagueOfProject`.`games`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `leagueOfProject`.`games` (
+  `id_game` INT NOT NULL ,
+  `id_player_1` INT NOT NULL ,
+  `id_player_2` INT NOT NULL ,
+  PRIMARY KEY (`id_game`) ,
+  INDEX `fk_games_players1_idx` (`id_player_1` ASC) ,
+  INDEX `fk_games_players2_idx` (`id_player_2` ASC) ,
+  CONSTRAINT `fk_games_players1`
+    FOREIGN KEY (`id_player_1` )
+    REFERENCES `leagueOfProject`.`players` (`id_player` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_games_players2`
+    FOREIGN KEY (`id_player_2` )
+    REFERENCES `leagueOfProject`.`players` (`id_player` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
---
--- Structure de la table `games`
---
 
-DROP TABLE IF EXISTS `games`;
-CREATE TABLE IF NOT EXISTS `games` (
-  `id_game` int(11) NOT NULL,
-  `id_player_1` int(11) NOT NULL,
-  `id_player_2` int(11) NOT NULL,
-  PRIMARY KEY (`id_game`),
-  KEY `fk_games_players1_idx` (`id_player_1`),
-  KEY `fk_games_players2_idx` (`id_player_2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `players`
---
-
-DROP TABLE IF EXISTS `players`;
-CREATE TABLE IF NOT EXISTS `players` (
-  `id_player` int(11) NOT NULL,
-  `player_pseudo` int(11) NOT NULL,
-  `player_character` int(11) NOT NULL,
-  `player_item` int(11) NOT NULL,
-  `player_strength` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `player_life` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `player_intelligence` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `player_protection` binary(1) NOT NULL,
-  `player_ability_1` binary(1) NOT NULL,
-  `player_ability_2` binary(1) NOT NULL,
-  PRIMARY KEY (`id_player`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contraintes pour les tables exportées
---
-
---
--- Contraintes pour la table `games`
---
-ALTER TABLE `games`
-  ADD CONSTRAINT `fk_games_players1` FOREIGN KEY (`id_player_1`) REFERENCES `mydb`.`players` (`id_player`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_games_players2` FOREIGN KEY (`id_player_2`) REFERENCES `mydb`.`players` (`id_player`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
