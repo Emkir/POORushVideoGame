@@ -18,13 +18,8 @@
         $characType1=$character1->type;
         $type1 = new $characType1;
         $player1->save($type1);
-        //var_dump($character1);
         $perso1 = $character1->getAll('id_character='.$character1->id_character);
-        //var_dump($perso1[0]->name);
 
-
- 
-        //var_dump($playergame1);
 
         //ASSIGN SMARTY PLAYER 1
         $smarty->assign("nickname1",$_POST['nickname1']);
@@ -72,30 +67,12 @@
         $smarty->assign("health_p2",$health_p2);
         $smarty->assign("strength_p2",$strength_p2);
         $smarty->assign("intel_p2",$intel_p2);
-      //  var_dump($player2);
-      
-
-
-
-
-
         $smarty->assign('template','game');
     }
 
     elseif($action == "gameAction"){
         $stop=false;
-        /*Check if any player has 0 Health point */
-        $player1 = new Player();
-        $player1->id_player = $_GET["player1"];
-        $player1->hydrate();
 
-        $player2 = new Player();
-        $player2->id_player = $_GET["player2"];
-        $player2->hydrate();
-        if($player1->player_health < 1 || $player2->player_health < 1){
-            $stop = true;
-            $smarty->assign('finish','Partie terminée');
-        }
 
         if ($stop === false){
             /* une attaque */
@@ -113,8 +90,6 @@
 
                 /* l'attaque se passe */
                 $player->attack($defender);
-
-                var_dump($defender);
 
                 /* on sauvegarde les informations */
                 $defender->save();
@@ -153,10 +128,26 @@
             }
         }
 
+        /*Check if any player has 0 Health point */
+        $player1 = new Player();
+        $player1->id_player = $_GET["player1"];
+        $player1->hydrate();
+
+        $player2 = new Player();
+        $player2->id_player = $_GET["player2"];
+        $player2->hydrate();
+        if($player1->player_health < 1 || $player2->player_health < 1){
+            $stop = true;
+            $smarty->assign('finish','Partie terminée');
+        }
+
 
         /* INFORMATIONS JOUEUR 1 */
 
-
+        $player1->hydrate();
+        if($player1->player_health < 0){
+            $player1->player_health = 0;
+        }
         $character1 = new Character();
         $character1->id_character = $player1->id_character;
         $character1->hydrate();
@@ -173,7 +164,10 @@
 
         /* INFORMATIONS JOUEUR 2 */
 
-
+        $player2->hydrate();
+        if($player2->player_health < 0){
+            $player2->player_health = 0;
+        }
         $character2 = new Character();
         $character2->id_character = $player2->id_character;
         $character2->hydrate();
