@@ -10,7 +10,7 @@
 	<a href="index.php?action=gameAction&amp;player1={$player}&amp;gameAction=protect"><button>Se prot&eacute;ger</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player}&amp;gameAction=special1"><button>Sp&eacute;cial 1</button></a>
 	<a href="index.php?action=gameAction&amp;player1={$player}&amp;gameAction=special2"><button>Sp&eacute;cial 2</button></a>
-
+</table>
 	<br><br>
 
  <table>
