@@ -5,10 +5,10 @@
         public function addObject(Object $object);
 
 
-		/* la  boule de feu => 1 tour de chargement puis tape 300 dégats */
+		// Inflige 325 de dégats
 		public function fireBall(Player $enemy);
 
-		/* premiers soins => rend 250 PV */
+		/* Réduit les stats de l'ennemi */
 		public function reduceStat(Player $enemy);
 
 	}

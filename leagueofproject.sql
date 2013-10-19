@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 18 Octobre 2013 à 23:00
+-- Généré le: Sam 19 Octobre 2013 à 02:55
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `leagueofproject`
 --
-CREATE DATABASE IF NOT EXISTS `leagueofproject` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE IF NOT EXISTS `leagueofproject` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `leagueofproject`;
 
 -- --------------------------------------------------------
@@ -40,11 +40,11 @@ CREATE TABLE IF NOT EXISTS `characters` (
 --
 
 INSERT INTO `characters` (`id_character`, `name`, `type`) VALUES
-(1, 'Bromanidd le guerrier', 'Warrior'),
-(2, 'Graurk le barbare', 'Barbarian'),
-(3, 'Oudin le mage', 'Mage'),
-(4, 'Sorensean le necromancien', 'Necromancer'),
-(5, 'Galaviel l''elfe de sang', 'BloodElf');
+(1, 'Bromanidd le Guerrier', 'Warrior'),
+(2, 'Graurk le Barbare', 'Barbarian'),
+(3, 'Warlock le Mage', 'Mage'),
+(4, 'Sorensean le Necromancien', 'Necromancer'),
+(5, 'Galaviel l''Elfe de sang', 'BloodElf');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `player_ability_2` binary(1) DEFAULT NULL,
   PRIMARY KEY (`id_player`),
   KEY `fk_players_characters1` (`id_character`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=246 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=290 ;
 
 --
 -- Contraintes pour les tables exportées

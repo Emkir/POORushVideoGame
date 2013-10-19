@@ -265,11 +265,15 @@
         $player2 = new Player();
         $player2->id_player = $_GET["player2"];
         $player2->hydrate();
-        if($player1->player_health < 1 || $player2->player_health < 1){
+        if($player1->player_health < 1 ){
             $stop = true;
-            $smarty->assign('finish','Partie terminée');
+            $smarty->assign('finish','Partie terminée - '.$player1->nickname.' a gagné');
         }
-
+        elseif($player2->player_health < 1){
+            $stop = true;
+            $smarty->assign('finish','Partie terminée - '.$player2->nickname.' a gagné');
+        }
+        
 
         /* INFORMATIONS JOUEUR 1 */
 
