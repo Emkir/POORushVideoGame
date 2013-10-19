@@ -42,14 +42,14 @@ class Necromancer extends Character implements NecromancerInterface{
 
     }
 
-	//Inflige 1/8 de la vie de l'adversaire sans tenir compte de la protection
+	//Inflige 1/3 de la vie de l'adversaire sans tenir compte de la protection
 	public function strengthOfLife(Player $enemy){
         
         /* on récupère la vie de l'ennemi */
         $health = $enemy->player_health;
 
         /* on calcule l'attaque */
-        $atkPower = $health/8;
+        $atkPower = $health/3;
 
         /* on vérifie si il se protège */
         if($enemy->player_protection == 1){

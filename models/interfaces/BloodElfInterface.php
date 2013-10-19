@@ -4,10 +4,10 @@ interface BloodElfInterface
     public function addObject(Object $object);
 
 
-    //Perd 250 de santé et paralyse l'ennemi pour un tour
+    //Inflige 50 dégats et réduit les stats de 5 points 
     public function bloodDrown(Player $enemy);
 
-    //se soigne pour 50% de la force ennemie
+    //Inflige 30 degats et reduit les stats de 15
     public function frenzy(Player $enemy);
 
 }

@@ -5,10 +5,10 @@ interface NecromancerInterface{
     public function addObject(Object $object);
 
 
-// Inflige 150 de force et rend 75 de santé
+//Met des dégats en fonction de la force adverse (0.5)
 	public function damageStat(Player $enemy);
 
-//Inflige 250 de force en échange de 150 de santé
+//Inflige 1/3 de la vie de l'adversaire sans tenir compte de la protection
 	public function strengthOfLife(Player $enemy);
 
 }

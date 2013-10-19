@@ -45,7 +45,7 @@ class BloodElf extends Character implements BloodElfInterface {
         $enemy->player_intelligence -= 5;
     }
 
-    //Inflige 30 degats et reduit les stats de 10
+    //Inflige 30 degats et reduit les stats de 15
     public function frenzy(Player $enemy){
         /* on calcule l'attaque */
         $atkPower = 30;
@@ -66,8 +66,8 @@ class BloodElf extends Character implements BloodElfInterface {
         $enemy->player_health = $remainLife;
 
         /* on reduit les stats */
-        $enemy->player_strength -= 10;
-        $enemy->player_intelligence -= 10;
+        $enemy->player_strength -= 15;
+        $enemy->player_intelligence -= 15;
 
     }
 }

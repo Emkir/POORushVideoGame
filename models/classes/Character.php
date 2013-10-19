@@ -19,7 +19,6 @@ class Character extends Table implements CharacterInterface{
         array_push($this->inventory,$object);
        // echo 'là';
        //var_dump($this->inventory);
-       //  die("MARCHE SOLAPE");
     }
 
     public function setStrength($strength){

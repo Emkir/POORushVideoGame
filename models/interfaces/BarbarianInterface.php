@@ -7,7 +7,7 @@ interface BarbarianInterface
 
     //Tape deux fois avec 75% de sa force
     public function rage(Player $enemy);
-    //Réduit la force adverse de 15%
+    //Effraie l'enemi lui faisant perdre 250 de santé
     public function roar(Player $enemy);
 }
 ?>
